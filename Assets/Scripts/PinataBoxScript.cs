@@ -11,20 +11,24 @@ public class PinataBoxScript : MonoBehaviour
 	public GameObject _keyToInstantiate;
 	public GameObject _lightBulbToActivate;
 	public PinataScript _pinata;
+	public bool _isActive = false;
 
 	private void OnMouseDown()
 	{
-		if (_isTimerStarted == false)
+		if (_isActive)
 		{
-			StartCoroutine(TimerBeforeReset());
-		}
-		_numberOfClicks++;
-		if (_numberOfClicks == _numberOfClicksNeeded)
-		{
-			_pinata.DestroyMe();
-			this.gameObject.GetComponent<Rigidbody>().useGravity = true;
-			GameObject go = Instantiate(_keyToInstantiate, transform.position + Vector3.forward * 2, Quaternion.identity);
-			go.GetComponent<KeyScript>()._objectToSetActive = _lightBulbToActivate;
+			if (_isTimerStarted == false)
+			{
+				StartCoroutine(TimerBeforeReset());
+			}
+			_numberOfClicks++;
+			if (_numberOfClicks == _numberOfClicksNeeded)
+			{
+				_pinata.DestroyMe();
+				this.gameObject.GetComponent<Rigidbody>().useGravity = true;
+				GameObject go = Instantiate(_keyToInstantiate, transform.position + Vector3.forward * 2, Quaternion.identity);
+				go.GetComponent<KeyScript>()._objectToSetActive = _lightBulbToActivate;
+			}
 		}
 	}
 

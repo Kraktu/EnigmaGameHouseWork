@@ -40,6 +40,8 @@ public class SwitchScript : MonoBehaviour
 	[Tooltip("ButtonInstantiatePlusAnimation")]
 	public SymboleEnigma _symboleEnigma;
 
+	[HideInInspector]
+	public bool _isActive = false;
 	int _nbrOfTimeClicked=0;
 	bool _isLightOn = false;
 	[HideInInspector]
@@ -63,31 +65,33 @@ public class SwitchScript : MonoBehaviour
 	}
 	private void OnMouseDown()
 	{
-		switch (_typeOfActivator)
+		if (_isActive)
 		{
-			case TypeOfActivator.SwitchActivator:
-				SwitchActivatorClick();
-				break;
+			switch (_typeOfActivator)
+			{
+				case TypeOfActivator.SwitchActivator:
+					SwitchActivatorClick();
+					break;
 
-			case TypeOfActivator.ButtonActivator:
-				ButtonActivatorClick();
-				break;
+				case TypeOfActivator.ButtonActivator:
+					ButtonActivatorClick();
+					break;
 
-			case TypeOfActivator.ButtonPlaySoud:
-				ButtonPlaySoundClick();
-				break;
-			case TypeOfActivator.ButtonInstantiatePlusAnimation:
-				ButtonInstantiatePlusAnimationClick();
-				break;
-			case TypeOfActivator.PinataButton:
-				PinataButtonClick();
-				break;
+				case TypeOfActivator.ButtonPlaySoud:
+					ButtonPlaySoundClick();
+					break;
+				case TypeOfActivator.ButtonInstantiatePlusAnimation:
+					ButtonInstantiatePlusAnimationClick();
+					break;
+				case TypeOfActivator.PinataButton:
+					PinataButtonClick();
+					break;
 
 
-			default:
-				break;
+				default:
+					break;
+			}
 		}
-
 	}
 
 	void PinataButtonClick()

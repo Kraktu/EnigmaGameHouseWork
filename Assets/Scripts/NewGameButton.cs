@@ -10,6 +10,7 @@ public class NewGameButton : MonoBehaviour
 	public LightBulbScript[] _lightBulbs;
 	public TextMesh _NewGameText;
 	public Material _deactivatedMat, _activatedMat;
+	public GameObject[] _gameObjectsToInitialize;
 
 	private void OnMouseDown()
 	{
@@ -23,6 +24,8 @@ public class NewGameButton : MonoBehaviour
 			this.gameObject.GetComponent<MeshRenderer>().material = _deactivatedMat;
 			this.gameObject.GetComponent<BoxCollider>().enabled = false;
 			_isFirstUse = false;
+			InitializeAllGameObjects();
+
 		}
 
 
@@ -47,6 +50,41 @@ public class NewGameButton : MonoBehaviour
 			_NewGameText.gameObject.SetActive(true);
 			this.gameObject.GetComponent<MeshRenderer>().material = _activatedMat;
 			this.gameObject.GetComponent<BoxCollider>().enabled = true;
+		}
+	}
+	public void InitializeAllGameObjects()
+	{
+		for (int i = 0; i < _gameObjectsToInitialize.Length; i++)
+		{
+			LambdaBall lambdaBall = _gameObjectsToInitialize[i].GetComponent<LambdaBall>();
+			if (lambdaBall!=null)
+			{
+				lambdaBall._isActive = true;
+			}
+		}
+		for (int i = 0; i < _gameObjectsToInitialize.Length; i++)
+		{
+			PinataScript pinata = _gameObjectsToInitialize[i].GetComponent<PinataScript>();
+			if (pinata!=null)
+			{
+				pinata._isActive = true;
+			}
+		}
+		for (int i = 0; i < _gameObjectsToInitialize.Length; i++)
+		{
+			SwitchScript switchScript = _gameObjectsToInitialize[i].GetComponent<SwitchScript>();
+			if (switchScript != null)
+			{
+				switchScript._isActive = true;
+			}
+		}
+		for (int i = 0; i < _gameObjectsToInitialize.Length; i++)
+		{
+			SoundEnigma soundEnigma = _gameObjectsToInitialize[i].GetComponent<SoundEnigma>();
+			if (soundEnigma != null)
+			{
+				soundEnigma._isActive = true;
+			}
 		}
 	}
 }

@@ -10,18 +10,22 @@ public class LambdaBall : MonoBehaviour
 	bool _isTimerStarted;
 	public GameObject _keyToInstantiate;
 	public GameObject _lightBulbToActivate;
+	public bool _isActive=false;
 
 	private void OnMouseDown()
 	{
-		if (_isTimerStarted==false)
+		if (_isActive)
 		{
-			StartCoroutine(TimerBeforeReset());
-		}
-		_numberOfClicks++;
-		if (_numberOfClicks==_numberOfClicksNeeded)
-		{
-			GameObject go = Instantiate(_keyToInstantiate, transform.position + Vector3.down * 2, Quaternion.identity);
-			go.GetComponent<KeyScript>()._objectToSetActive = _lightBulbToActivate;
+			if (_isTimerStarted == false)
+			{
+				StartCoroutine(TimerBeforeReset());
+			}
+			_numberOfClicks++;
+			if (_numberOfClicks == _numberOfClicksNeeded)
+			{
+				GameObject go = Instantiate(_keyToInstantiate, transform.position + Vector3.down * 2, Quaternion.identity);
+				go.GetComponent<KeyScript>()._objectToSetActive = _lightBulbToActivate;
+			}
 		}
 	}
 

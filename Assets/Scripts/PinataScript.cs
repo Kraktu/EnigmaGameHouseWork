@@ -15,41 +15,55 @@ public class PinataScript : MonoBehaviour
 	public GameObject _objectToSwapWith,_candyToSpawn;
 	public Vector3 _maxCandyInstantiationDistance;
 	public int _numberOfCandyToSpaw;
+	[HideInInspector]
+	public bool _isActive=false;
 
 	private void OnMouseDown()
 	{
-		if (_isTimerNeeded)
+		if (_isActive)
 		{
-			if (_isTimerStarted == false)
+			if (_isTimerNeeded)
 			{
-				StartCoroutine(TimerBeforeReset());
+				if (_isTimerStarted == false)
+				{
+					StartCoroutine(TimerBeforeReset());
+				}
+				_numberOfClicks++;
 			}
-			_numberOfClicks++;
-		}
 
-		if (!_secondStep&&_firstStep &&_numberOfClicks == _numberOfClicksNeeded)
-		{
-			_secondStep = true;
-			_isTimerNeeded = false;
-			Vector3 originalPosition = transform.position;
-			transform.position = _objectToSwapWith.transform.position;
-			_objectToSwapWith.transform.position = originalPosition;
+			if (!_secondStep && _firstStep && _numberOfClicks == _numberOfClicksNeeded)
+			{
+				_secondStep = true;
+				_isTimerNeeded = false;
+				Vector3 originalPosition = transform.position;
+				transform.position = _objectToSwapWith.transform.position;
+				_objectToSwapWith.transform.position = originalPosition;
+				_objectToSwapWith.GetComponent<PinataBoxScript>()._isActive = true;
+			}
 		}
+		
 	}
 	private void OnMouseEnter()
 	{
-		if (_firstStep==false)
+		if (_isActive)
 		{
-			_isTimerNeeded = false;
-			gameObject.GetComponent<MeshRenderer>().enabled = false;
+			if (_firstStep == false)
+			{
+				_isTimerNeeded = false;
+				gameObject.GetComponent<MeshRenderer>().enabled = false;
+			}
 		}
+		
 	}
 	private void OnMouseExit()
 	{
-		if (_firstStep == false)
+		if (_isActive)
 		{
-			_isTimerNeeded = true;
-			gameObject.GetComponent<MeshRenderer>().enabled = true;
+			if (_firstStep == false)
+			{
+				_isTimerNeeded = true;
+				gameObject.GetComponent<MeshRenderer>().enabled = true;
+			}
 		}
 	}
 
@@ -67,17 +81,23 @@ public class PinataScript : MonoBehaviour
 	}
 	public void PinataFirstStep()
 	{
-		_firstStep = true;
-		this.gameObject.GetComponent<MeshRenderer>().material = _activeMaterial;
+		if (_isActive)
+		{
+			_firstStep = true;
+			this.gameObject.GetComponent<MeshRenderer>().material = _activeMaterial;
 
+		}
 	}
 	public void DestroyMe()
 	{
-		for (int i = 0; i < _numberOfCandyToSpaw; i++)
+		if (_isActive)
 		{
-			Instantiate(_candyToSpawn, transform.position + new Vector3(Random.Range(-_maxCandyInstantiationDistance.x, _maxCandyInstantiationDistance.x), Random.Range(0, _maxCandyInstantiationDistance.y), Random.Range(-_maxCandyInstantiationDistance.z, _maxCandyInstantiationDistance.z)), Quaternion.identity);
+			for (int i = 0; i < _numberOfCandyToSpaw; i++)
+			{
+				Instantiate(_candyToSpawn, transform.position + new Vector3(Random.Range(-_maxCandyInstantiationDistance.x, _maxCandyInstantiationDistance.x), Random.Range(0, _maxCandyInstantiationDistance.y), Random.Range(-_maxCandyInstantiationDistance.z, _maxCandyInstantiationDistance.z)), Quaternion.identity);
+			}
+			Destroy(this.gameObject);
 		}
-		Destroy(this.gameObject);
 	}
 }
 

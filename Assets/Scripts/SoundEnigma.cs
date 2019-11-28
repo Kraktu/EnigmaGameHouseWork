@@ -11,6 +11,8 @@ public class SoundEnigma : MonoBehaviour
 	public GameObject _keyToInstantiate;
 	public GameObject _lightBulbToActivate;
 	public Material _InactiveButtonsMat, _activeButtonMat;
+	[HideInInspector]
+	public bool _isActive;
 
 	private void Start()
 	{
@@ -32,10 +34,13 @@ public class SoundEnigma : MonoBehaviour
 	}
 	public void OnMouseDown()
 	{
-		for (int i = 0; i < _soundButtons.Length; i++)
+		if (_isActive)
 		{
-			_soundButtons[i].GetComponent<BoxCollider>().enabled = true;
-			_soundButtons[i].GetComponent<MeshRenderer>().material = _activeButtonMat;
+			for (int i = 0; i < _soundButtons.Length; i++)
+			{
+				_soundButtons[i].GetComponent<BoxCollider>().enabled = true;
+				_soundButtons[i].GetComponent<MeshRenderer>().material = _activeButtonMat;
+			}
 		}
 	}
 }
