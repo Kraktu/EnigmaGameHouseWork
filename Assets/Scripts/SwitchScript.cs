@@ -8,7 +8,9 @@ public enum TypeOfActivator
 	ButtonActivator,
 	ButtonPlaySoud,
 	ButtonInstantiatePlusAnimation,
-	PinataButton
+	PinataButton,
+	MusicSwitch,
+	SkyBoxSwitch
 }
 public class SwitchScript : MonoBehaviour
 {
@@ -39,10 +41,14 @@ public class SwitchScript : MonoBehaviour
 	public SwitchScript _invertedMovementButton;
 	[Tooltip("ButtonInstantiatePlusAnimation")]
 	public SymboleEnigma _symboleEnigma;
+	[Tooltip("MusicSwitch")]
+	public string[] _musicToPlay;
+	[Tooltip("SkyBoxSwitch")]
+	public Material[] _skyBoxes;
 
 	[HideInInspector]
 	public bool _isActive = false;
-	int _nbrOfTimeClicked=0;
+	int _nbrOfTimeClicked=0,_musicIndex=0,_skyBoxIndex=0;
 	bool _isLightOn = false;
 	[HideInInspector]
 	public GameObject _instantiatedGO;
@@ -86,7 +92,12 @@ public class SwitchScript : MonoBehaviour
 				case TypeOfActivator.PinataButton:
 					PinataButtonClick();
 					break;
-
+				case TypeOfActivator.MusicSwitch:
+					MusicSwitchClick();
+					break;
+				case TypeOfActivator.SkyBoxSwitch:
+					MusicSwitchClick();
+					break;
 
 				default:
 					break;
@@ -140,6 +151,25 @@ public class SwitchScript : MonoBehaviour
 
 		StartCoroutine(InstantationPlusAnimation());
 		
+	}
+	void MusicSwitchClick()
+	{
+		_musicIndex++;
+		if (_musicIndex==_musicToPlay.Length)
+		{
+			_musicIndex = 0;
+		}
+		SoundManager.Instance.ChangeMusic(_musicToPlay[_musicIndex]);
+	}
+
+	void SkyBoxSwitchClick()
+	{
+		_skyBoxIndex++;
+		if (_skyBoxIndex == _skyBoxes.Length)
+		{
+			_skyBoxIndex = 0;
+		}
+		RenderSettings.skybox = _skyBoxes[_skyBoxIndex];
 	}
 	IEnumerator InstantationPlusAnimation()
 	{

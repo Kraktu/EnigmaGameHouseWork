@@ -46,4 +46,11 @@ public class SoundManager : MonoBehaviour
 		//_aSourceSFX.outputAudioMixerGroup.audioMixer.SetFloat("SFXVolume", volume);
 		_aSourceSFX.PlayOneShot(_soundEffectsDict[clipName]);
 	}
+	public void ChangeMusic(string clipName, float pitch = 1, float volume = 0)
+	{
+		//_aSourceMusic.outputAudioMixerGroup.audioMixer.SetFloat("MusicPitch", pitch);
+		//_aSourceMusic.outputAudioMixerGroup.audioMixer.SetFloat("MusicVolume", volume);
+		_aSourceMusic.clip = _soundEffectsDict[clipName];
+		_aSourceMusic.Play();
+	}
 }
