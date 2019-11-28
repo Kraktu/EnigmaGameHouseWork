@@ -1,13 +1,23 @@
 fileFormatVersion: 2
-guid: e5a44aeb066e24347a58109ae6939245
+guid: af90f91d10f5367489bfd79ea89e82dd
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_GradientMap
+    second: {fileID: 2100000, guid: e1ad7896d45a4c845b120b1e100fde48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_Outline
+    second: {fileID: 2100000, guid: 2183044f06e54aa43b4579d1a2652627, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
-    materialSearch: 1
+    materialSearch: 2
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
@@ -68,7 +78,7 @@ ModelImporter:
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
   referencedClips: []
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 3
