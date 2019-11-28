@@ -2245,6 +2245,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightBulb (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8030054158039577830, guid: 6bec4bed6a540c94cb77a96ca337e2ec,
+        type: 3}
+      propertyPath: _newGameButton
+      value: 
+      objectReference: {fileID: 1165914079}
     - target: {fileID: 5527920230835897442, guid: 6bec4bed6a540c94cb77a96ca337e2ec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2733,6 +2738,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightBulb (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8030054158039577830, guid: 6bec4bed6a540c94cb77a96ca337e2ec,
+        type: 3}
+      propertyPath: _newGameButton
+      value: 
+      objectReference: {fileID: 1165914079}
     - target: {fileID: 5527920230835897442, guid: 6bec4bed6a540c94cb77a96ca337e2ec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3672,8 +3682,9 @@ MonoBehaviour:
   - {fileID: 1193406391}
   _spawnKeyPlace: {x: 0, y: 10, z: 6}
   _nbrOfSequencesNeededToWin: 2
+  _keyToInstantiate: {fileID: 5449000473484993014, guid: a98c71176b9dac7458aab3998611ed8e,
+    type: 3}
   _lightBulbToActivate: {fileID: 380482379}
-  _achievementButton: {fileID: 1955572294}
   _InactiveButtonsMat: {fileID: 2100000, guid: c5bfd88b43f56da4a974080558780e5e, type: 2}
   _activeButtonMat: {fileID: 2100000, guid: c98e7df238e0d2649adf336436940b6c, type: 2}
 --- !u!114 &1300740272 stripped
@@ -4366,6 +4377,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightBulb (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8030054158039577830, guid: 6bec4bed6a540c94cb77a96ca337e2ec,
+        type: 3}
+      propertyPath: _newGameButton
+      value: 
+      objectReference: {fileID: 1165914079}
     - target: {fileID: 5527920230835897442, guid: 6bec4bed6a540c94cb77a96ca337e2ec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4421,11 +4437,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8030054158039577830, guid: 6bec4bed6a540c94cb77a96ca337e2ec,
-        type: 3}
-      propertyPath: _newGameButton
-      value: 
-      objectReference: {fileID: 1165914079}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bec4bed6a540c94cb77a96ca337e2ec, type: 3}
 --- !u!4 &1540731636 stripped
@@ -6260,6 +6271,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LightBulb
       objectReference: {fileID: 0}
+    - target: {fileID: 8030054158039577830, guid: 6bec4bed6a540c94cb77a96ca337e2ec,
+        type: 3}
+      propertyPath: _newGameButton
+      value: 
+      objectReference: {fileID: 1165914079}
     - target: {fileID: 5527920230835897442, guid: 6bec4bed6a540c94cb77a96ca337e2ec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6315,11 +6331,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8030054158039577830, guid: 6bec4bed6a540c94cb77a96ca337e2ec,
-        type: 3}
-      propertyPath: _newGameButton
-      value: 
-      objectReference: {fileID: 1165914079}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6bec4bed6a540c94cb77a96ca337e2ec, type: 3}
 --- !u!4 &6356561886700562372 stripped

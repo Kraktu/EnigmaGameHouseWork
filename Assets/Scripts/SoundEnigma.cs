@@ -8,8 +8,8 @@ public class SoundEnigma : MonoBehaviour
 	public Vector3 _spawnKeyPlace;
 	int _nbrOfButtonPressed=0;
 	public int _nbrOfSequencesNeededToWin;
+	public GameObject _keyToInstantiate;
 	public GameObject _lightBulbToActivate;
-	public GameObject _achievementButton;
 	public Material _InactiveButtonsMat, _activeButtonMat;
 
 	private void Start()
@@ -25,8 +25,9 @@ public class SoundEnigma : MonoBehaviour
 		_nbrOfButtonPressed++;
 		if (_nbrOfButtonPressed==_soundButtons.Length*_nbrOfSequencesNeededToWin)
 		{
-			GameObject go = Instantiate(_lightBulbToActivate, _spawnKeyPlace, Quaternion.identity);
-			go.GetComponent<KeyScript>()._objectToSetActive = _achievementButton;
+			GameObject go = Instantiate(_keyToInstantiate, _spawnKeyPlace, Quaternion.identity);
+			go.GetComponent<KeyScript>()._objectToSetActive = _lightBulbToActivate;
+
 		}
 	}
 	public void OnMouseDown()

@@ -22,10 +22,11 @@ public class NewGameButton : MonoBehaviour
 			_NewGameText.gameObject.SetActive(false);
 			this.gameObject.GetComponent<MeshRenderer>().material = _deactivatedMat;
 			this.gameObject.GetComponent<BoxCollider>().enabled = false;
+			_isFirstUse = false;
 		}
 
 
-		if (!_isFirstUse )
+		else if (!_isFirstUse )
 		{
 			SceneManager.LoadScene("EndOfTheGame");
 		}
