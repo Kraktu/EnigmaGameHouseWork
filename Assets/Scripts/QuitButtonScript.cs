@@ -8,7 +8,6 @@ public class QuitButtonScript : MonoBehaviour
 	public bool _isQuitWorking = true;
 	int _nbrOfCLicksCount=0;
 	public int _nbrOfClicksNeededToQuit;
-	public GameObject _keyToInstantiate;
 	public GameObject _lightBulbToActivate;
 	public int _numberOfCandyToSpaw;
 	public GameObject _candyToSpawn;
@@ -29,8 +28,7 @@ public class QuitButtonScript : MonoBehaviour
 			}
 			if (_nbrOfCLicksCount==1)
 			{
-				GameObject go = Instantiate(_keyToInstantiate, transform.position + Vector3.back * 3, Quaternion.identity);
-				go.GetComponent<KeyScript>()._objectToSetActive = _lightBulbToActivate;
+				_lightBulbToActivate.GetComponent<LightBulbScript>().ActivateLightBulb();
 			}
 			if (_nbrOfCLicksCount>=_nbrOfClicksNeededToQuit)
 			{

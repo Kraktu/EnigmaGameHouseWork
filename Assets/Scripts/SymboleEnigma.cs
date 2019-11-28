@@ -5,11 +5,9 @@ using UnityEngine;
 public class SymboleEnigma : MonoBehaviour
 {
 	public SwitchScript[] _symboleModulesArrowUp;
-	public GameObject __lightBulbToActivate;
+	public GameObject _lightBulbToActivate;
 	int[] _symboleModulesShowedSymbolIndex;
 	bool _symbolMatching=false;
-	public GameObject _keyToInstantiate;
-	public Vector3 _keySpawnPos;
 
 	private void Start()
 	{
@@ -46,8 +44,7 @@ public class SymboleEnigma : MonoBehaviour
 		}
 		if (_symbolMatching==true)
 		{
-			GameObject go = Instantiate(_keyToInstantiate,_keySpawnPos, Quaternion.identity);
-			go.GetComponent<KeyScript>()._objectToSetActive = __lightBulbToActivate;
+			_lightBulbToActivate.GetComponent<LightBulbScript>().ActivateLightBulb();
 		}
 	}
 }

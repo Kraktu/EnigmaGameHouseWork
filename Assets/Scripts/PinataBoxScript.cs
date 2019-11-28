@@ -8,7 +8,6 @@ public class PinataBoxScript : MonoBehaviour
 	public float _delayBeforeReset;
 	int _numberOfClicks;
 	bool _isTimerStarted;
-	public GameObject _keyToInstantiate;
 	public GameObject _lightBulbToActivate;
 	public PinataScript _pinata;
 	public bool _isActive = false;
@@ -26,8 +25,7 @@ public class PinataBoxScript : MonoBehaviour
 			{
 				_pinata.DestroyMe();
 				this.gameObject.GetComponent<Rigidbody>().useGravity = true;
-				GameObject go = Instantiate(_keyToInstantiate, transform.position + Vector3.forward * 2, Quaternion.identity);
-				go.GetComponent<KeyScript>()._objectToSetActive = _lightBulbToActivate;
+				_lightBulbToActivate.GetComponent<LightBulbScript>().ActivateLightBulb();
 			}
 		}
 	}
