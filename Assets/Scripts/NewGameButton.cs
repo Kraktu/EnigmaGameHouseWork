@@ -11,6 +11,7 @@ public class NewGameButton : MonoBehaviour
 	public TextMesh _NewGameText;
 	public Material _deactivatedMat, _activatedMat;
 	public GameObject[] _gameObjectsToInitialize;
+	public QuitButtonScript _quitButton;
 
 	private void OnMouseDown()
 	{
@@ -25,6 +26,7 @@ public class NewGameButton : MonoBehaviour
 			this.gameObject.GetComponent<BoxCollider>().enabled = false;
 			_isFirstUse = false;
 			InitializeAllGameObjects();
+			_quitButton.OnStartPressed();
 
 		}
 
