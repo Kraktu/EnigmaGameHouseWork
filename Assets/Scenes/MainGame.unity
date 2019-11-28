@@ -431,6 +431,7 @@ MonoBehaviour:
   _musicToPlay: []
   _skyBoxes: []
   _direction: 0
+  _possibleMat: []
   _isActive: 0
   _instantiatedGO: {fileID: 0}
 --- !u!65 &65465639
@@ -515,6 +516,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
         type: 3}
+      propertyPath: _possibleMat.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
       propertyPath: _symboleEnigma
       value: 
       objectReference: {fileID: 800487827}
@@ -527,6 +533,31 @@ PrefabInstance:
         type: 3}
       propertyPath: _direction
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 479ae33db04c34a468f150af608885ad, type: 2}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c36b7d95a54ac7c489b4e9e098889026, type: 2}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 414327f6b2ea9e540a803bf2b44876a9, type: 2}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63d786bb395ca354f8cc60784197ad4e, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
         type: 3}
@@ -543,6 +574,26 @@ PrefabInstance:
       propertyPath: _direction
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 479ae33db04c34a468f150af608885ad, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c36b7d95a54ac7c489b4e9e098889026, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 414327f6b2ea9e540a803bf2b44876a9, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63d786bb395ca354f8cc60784197ad4e, type: 2}
     - target: {fileID: 4755591530878107175, guid: 066242865e6e688478e84ef233684ba3,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -882,6 +933,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
         type: 3}
+      propertyPath: _possibleMat.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
       propertyPath: _symboleEnigma
       value: 
       objectReference: {fileID: 800487827}
@@ -894,6 +950,31 @@ PrefabInstance:
         type: 3}
       propertyPath: _typeOfActivator
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 479ae33db04c34a468f150af608885ad, type: 2}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c36b7d95a54ac7c489b4e9e098889026, type: 2}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 414327f6b2ea9e540a803bf2b44876a9, type: 2}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63d786bb395ca354f8cc60784197ad4e, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
         type: 3}
@@ -910,6 +991,26 @@ PrefabInstance:
       propertyPath: _typeOfActivator
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 479ae33db04c34a468f150af608885ad, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c36b7d95a54ac7c489b4e9e098889026, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 414327f6b2ea9e540a803bf2b44876a9, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63d786bb395ca354f8cc60784197ad4e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 066242865e6e688478e84ef233684ba3, type: 3}
 --- !u!1 &183025598
@@ -1218,6 +1319,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
         type: 3}
+      propertyPath: _possibleMat.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
       propertyPath: _symboleEnigma
       value: 
       objectReference: {fileID: 800487827}
@@ -1230,6 +1336,31 @@ PrefabInstance:
         type: 3}
       propertyPath: _typeOfActivator
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 479ae33db04c34a468f150af608885ad, type: 2}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c36b7d95a54ac7c489b4e9e098889026, type: 2}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 414327f6b2ea9e540a803bf2b44876a9, type: 2}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63d786bb395ca354f8cc60784197ad4e, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
         type: 3}
@@ -1246,6 +1377,26 @@ PrefabInstance:
       propertyPath: _typeOfActivator
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 479ae33db04c34a468f150af608885ad, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c36b7d95a54ac7c489b4e9e098889026, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 414327f6b2ea9e540a803bf2b44876a9, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63d786bb395ca354f8cc60784197ad4e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 066242865e6e688478e84ef233684ba3, type: 3}
 --- !u!1 &269952688
@@ -1371,6 +1522,7 @@ MonoBehaviour:
   _musicToPlay: []
   _skyBoxes: []
   _direction: 0
+  _possibleMat: []
   _isActive: 0
   _instantiatedGO: {fileID: 0}
 --- !u!65 &343843196
@@ -3196,6 +3348,7 @@ MonoBehaviour:
   _musicToPlay: []
   _skyBoxes: []
   _direction: 0
+  _possibleMat: []
   _isActive: 0
   _instantiatedGO: {fileID: 0}
 --- !u!65 &1083703627
@@ -3761,6 +3914,7 @@ MonoBehaviour:
   _musicToPlay: []
   _skyBoxes: []
   _direction: 0
+  _possibleMat: []
   _isActive: 0
   _instantiatedGO: {fileID: 0}
 --- !u!65 &1171360458
@@ -3891,6 +4045,7 @@ MonoBehaviour:
   _musicToPlay: []
   _skyBoxes: []
   _direction: 0
+  _possibleMat: []
   _isActive: 0
   _instantiatedGO: {fileID: 0}
 --- !u!65 &1193406392
@@ -4280,6 +4435,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
         type: 3}
+      propertyPath: _possibleMat.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
       propertyPath: _symboleEnigma
       value: 
       objectReference: {fileID: 800487827}
@@ -4292,6 +4452,31 @@ PrefabInstance:
         type: 3}
       propertyPath: _typeOfActivator
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 479ae33db04c34a468f150af608885ad, type: 2}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c36b7d95a54ac7c489b4e9e098889026, type: 2}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 414327f6b2ea9e540a803bf2b44876a9, type: 2}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63d786bb395ca354f8cc60784197ad4e, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
         type: 3}
@@ -4308,6 +4493,26 @@ PrefabInstance:
       propertyPath: _typeOfActivator
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 479ae33db04c34a468f150af608885ad, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c36b7d95a54ac7c489b4e9e098889026, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 414327f6b2ea9e540a803bf2b44876a9, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63d786bb395ca354f8cc60784197ad4e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 066242865e6e688478e84ef233684ba3, type: 3}
 --- !u!1 &1287903637
@@ -4380,6 +4585,7 @@ MonoBehaviour:
   _musicToPlay: []
   _skyBoxes: []
   _direction: 0
+  _possibleMat: []
   _isActive: 0
   _instantiatedGO: {fileID: 0}
 --- !u!65 &1287903640
@@ -5806,6 +6012,7 @@ MonoBehaviour:
   _musicToPlay: []
   _skyBoxes: []
   _direction: 0
+  _possibleMat: []
   _isActive: 0
   _instantiatedGO: {fileID: 0}
 --- !u!135 &1728034670
@@ -6962,6 +7169,7 @@ MonoBehaviour:
   _musicToPlay: []
   _skyBoxes: []
   _direction: 0
+  _possibleMat: []
   _isActive: 0
   _instantiatedGO: {fileID: 0}
 --- !u!65 &2094049736
@@ -7282,6 +7490,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
         type: 3}
+      propertyPath: _possibleMat.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
       propertyPath: _symboleEnigma
       value: 
       objectReference: {fileID: 800487827}
@@ -7294,6 +7507,31 @@ PrefabInstance:
         type: 3}
       propertyPath: _typeOfActivator
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 479ae33db04c34a468f150af608885ad, type: 2}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c36b7d95a54ac7c489b4e9e098889026, type: 2}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 414327f6b2ea9e540a803bf2b44876a9, type: 2}
+    - target: {fileID: 2960381134622829426, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63d786bb395ca354f8cc60784197ad4e, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
         type: 3}
@@ -7310,6 +7548,26 @@ PrefabInstance:
       propertyPath: _typeOfActivator
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 479ae33db04c34a468f150af608885ad, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c36b7d95a54ac7c489b4e9e098889026, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 414327f6b2ea9e540a803bf2b44876a9, type: 2}
+    - target: {fileID: 2960381135874591389, guid: 066242865e6e688478e84ef233684ba3,
+        type: 3}
+      propertyPath: _possibleMat.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: 63d786bb395ca354f8cc60784197ad4e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 066242865e6e688478e84ef233684ba3, type: 3}
 --- !u!1001 &3695757767646756144

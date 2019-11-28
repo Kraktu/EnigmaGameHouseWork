@@ -53,8 +53,12 @@ public class SwitchScript : MonoBehaviour
 	public string[] _musicToPlay;
 	[Tooltip("SkyBoxSwitch")]
 	public Material[] _skyBoxes;
-
+	[Tooltip("ButtonSymboleModule")]
 	public WhereNewSymboleCome _direction;
+	[Tooltip("ButtonSymboleModule")]
+	public Material[] _possibleMat;
+
+	int _choosedMat=0;
 	[HideInInspector]
 	public bool _isActive = false;
 	int _nbrOfTimeClicked=0,_musicIndex=0,_skyBoxIndex=0;
@@ -208,12 +212,21 @@ public class SwitchScript : MonoBehaviour
 		this.gameObject.GetComponent<BoxCollider>().enabled = false;
 		_invertedMovementButton.gameObject.GetComponent<BoxCollider>().enabled = false;
 		_instantiatedGO = Instantiate(_objectToActivate, startPos, Quaternion.identity, _referenceSpace.transform);
+		_choosedMat++;
+		if (_choosedMat==_possibleMat.Length)
+		{
+			_choosedMat = 0;
+		}
+		_instantiatedGO.GetComponent<MeshRenderer>().material = _possibleMat[_choosedMat];
+		_instantiatedGO.GetComponent<TileSymboleScript>()._mychoosedMat = _choosedMat;
+		_instantiatedGO.GetComponent<TileSymboleScript>()._mychoosedMatString = _possibleMat[_choosedMat].ToString();
 		float time = 0;
 		float tRatio;
 		while (time<=_animationDuration)
 		{
 			tRatio = _movementAnimationCurve.Evaluate(time / _animationDuration);
 			_instantiatedGO.transform.localPosition = Vector3.Lerp(startPos, endPos, tRatio);
+
 			_oldGO.transform.localPosition = Vector3.Lerp(endPos, endPos - startPos, tRatio);
 
 			time += Time.deltaTime;
