@@ -8,6 +8,8 @@ public class TypingEnigmaScript : MonoBehaviour
 	public string[] _letterToShow;
 	public string[] _letterToType;
 	int _letterIndex;
+	public GameObject _keyToInstantiate;
+	public GameObject _lightBulbToActivate;
 
 	private void Start()
 	{
@@ -27,7 +29,9 @@ public class TypingEnigmaScript : MonoBehaviour
 		}
 		if (_letterIndex==_letterToShow.Length)
 		{
-			//Destroy(this.gameObject);
+			GameObject go = Instantiate(_keyToInstantiate, transform.position, Quaternion.identity);
+			go.GetComponent<KeyScript>()._objectToSetActive = _lightBulbToActivate;
+			Destroy(this.gameObject);
 		}
 	}
 	void OnGUI()

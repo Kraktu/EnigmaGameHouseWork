@@ -130,6 +130,8 @@ public class SwitchScript : MonoBehaviour
 	}
 	IEnumerator InstantationPlusAnimation()
 	{
+		this.gameObject.GetComponent<BoxCollider>().enabled = false;
+		_invertedMovementButton.gameObject.GetComponent<BoxCollider>().enabled = false;
 		if (_instantiatedGO != null)
 		{
 			_oldGO = _instantiatedGO;
@@ -154,5 +156,7 @@ public class SwitchScript : MonoBehaviour
 		_instantiatedGO.transform.localPosition = _endPosition;
 		_invertedMovementButton._instantiatedGO = _instantiatedGO;
 		_symboleEnigma.CheckIfSymboleMatching();
+		this.gameObject.GetComponent<BoxCollider>().enabled = true;
+		_invertedMovementButton.gameObject.GetComponent<BoxCollider>().enabled = true;
 	}
 }

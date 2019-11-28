@@ -8,7 +8,7 @@ public class KeyScript : MonoBehaviour
 
 	private void OnMouseDown()
 	{
-		_objectToSetActive.SetActive(true);
+		_objectToSetActive.GetComponent<LightBulbScript>().ActivateLightBulb();
 		Destroy(this.gameObject);
 	}
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class SymboleEnigma : MonoBehaviour
 {
 	public SwitchScript[] _symboleModulesArrowUp;
-	public GameObject _galleryMenu;
+	public GameObject __lightBulbToActivate;
 	int[] _symboleModulesShowedSymbolIndex;
 	bool _symbolMatching=false;
 	public GameObject _keyToInstantiate;
@@ -29,11 +29,15 @@ public class SymboleEnigma : MonoBehaviour
 		for (int i = 1; i < _symboleModulesShowedSymbolIndex.Length; i++)
 		{
 			_symbolMatching = true;
-			if (_symboleModulesArrowUp[i]._instantiatedGO == null)
+			for (int j = 0; j < _symboleModulesShowedSymbolIndex.Length; j++)
 			{
-				_symbolMatching = false;
-				break;
+				if (_symboleModulesArrowUp[j]._instantiatedGO == null)
+				{
+					_symbolMatching = false;
+					break;
+				}
 			}
+			
 			if (_symboleModulesShowedSymbolIndex[i-1]!=_symboleModulesShowedSymbolIndex[i])
 			{
 				_symbolMatching = false;
@@ -43,7 +47,7 @@ public class SymboleEnigma : MonoBehaviour
 		if (_symbolMatching==true)
 		{
 			GameObject go = Instantiate(_keyToInstantiate,_keySpawnPos, Quaternion.identity);
-			go.GetComponent<KeyScript>()._objectToSetActive = _galleryMenu;
+			go.GetComponent<KeyScript>()._objectToSetActive = __lightBulbToActivate;
 		}
 	}
 }

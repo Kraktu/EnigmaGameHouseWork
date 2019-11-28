@@ -9,7 +9,7 @@ public class LambdaBall : MonoBehaviour
 	int _numberOfClicks;
 	bool _isTimerStarted;
 	public GameObject _keyToInstantiate;
-	public GameObject _playButton;
+	public GameObject _lightBulbToActivate;
 
 	private void OnMouseDown()
 	{
@@ -21,7 +21,7 @@ public class LambdaBall : MonoBehaviour
 		if (_numberOfClicks==_numberOfClicksNeeded)
 		{
 			GameObject go = Instantiate(_keyToInstantiate, transform.position + Vector3.down * 2, Quaternion.identity);
-			go.GetComponent<KeyScript>()._objectToSetActive = _playButton;
+			go.GetComponent<KeyScript>()._objectToSetActive = _lightBulbToActivate;
 		}
 	}
 
