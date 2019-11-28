@@ -7,12 +7,13 @@ public enum TypeOfActivator
 	SwitchActivator,
 	ButtonActivator,
 	ButtonPlaySoud,
-	ButtonInstantiatePlusAnimation
+	ButtonInstantiatePlusAnimation,
+	PinataButton
 }
 public class SwitchScript : MonoBehaviour
 {
 	public TypeOfActivator _typeOfActivator;
-	[Tooltip("SwitchActivator,ButtonActivator,ButtonInstantiatePlusAnimation")]
+	[Tooltip("SwitchActivator,ButtonActivator,ButtonInstantiatePlusAnimation,PinataButton")]
 	public GameObject _objectToActivate;
 	[Tooltip("SwitchActivator")]
 	public GameObject _switch;
@@ -78,6 +79,10 @@ public class SwitchScript : MonoBehaviour
 			case TypeOfActivator.ButtonInstantiatePlusAnimation:
 				ButtonInstantiatePlusAnimationClick();
 				break;
+			case TypeOfActivator.PinataButton:
+				PinataButtonClick();
+				break;
+
 
 			default:
 				break;
@@ -85,6 +90,10 @@ public class SwitchScript : MonoBehaviour
 
 	}
 
+	void PinataButtonClick()
+	{
+		_objectToActivate.GetComponent<PinataScript>().PinataFirstStep();
+	}
 	void SwitchActivatorClick()
 	{
 		_isLightOn = !_isLightOn;
