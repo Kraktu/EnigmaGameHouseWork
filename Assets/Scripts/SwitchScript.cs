@@ -2,15 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum WhereNewSymboleCome
+{
+	fromLeft,
+	fromRight,
+	fromTop,
+	fromBottom
+}
 public enum TypeOfActivator
 {
 	SwitchActivator,
 	ButtonActivator,
 	ButtonPlaySoud,
-	ButtonInstantiatePlusAnimation,
+	ButtonInstantiateAnywherePlusAnimation,
 	PinataButton,
 	MusicSwitch,
-	SkyBoxSwitch
+	SkyBoxSwitch,
+	ButtonSymboleModule
 }
 public class SwitchScript : MonoBehaviour
 {
@@ -45,7 +53,12 @@ public class SwitchScript : MonoBehaviour
 	public string[] _musicToPlay;
 	[Tooltip("SkyBoxSwitch")]
 	public Material[] _skyBoxes;
+	[Tooltip("ButtonSymboleModule")]
+	public WhereNewSymboleCome _direction;
+	[Tooltip("ButtonSymboleModule")]
+	public Material[] _possibleMat;
 
+	int _choosedMat=0;
 	[HideInInspector]
 	public bool _isActive = false;
 	int _nbrOfTimeClicked=0,_musicIndex=0,_skyBoxIndex=0;
@@ -86,7 +99,7 @@ public class SwitchScript : MonoBehaviour
 				case TypeOfActivator.ButtonPlaySoud:
 					ButtonPlaySoundClick();
 					break;
-				case TypeOfActivator.ButtonInstantiatePlusAnimation:
+				case TypeOfActivator.ButtonInstantiateAnywherePlusAnimation:
 					ButtonInstantiatePlusAnimationClick();
 					break;
 				case TypeOfActivator.PinataButton:
@@ -96,7 +109,10 @@ public class SwitchScript : MonoBehaviour
 					MusicSwitchClick();
 					break;
 				case TypeOfActivator.SkyBoxSwitch:
-					MusicSwitchClick();
+					SkyBoxSwitchClick();
+					break;
+				case TypeOfActivator.ButtonSymboleModule:
+					ButtonSymboleModuleClick();
 					break;
 
 				default:
@@ -149,7 +165,7 @@ public class SwitchScript : MonoBehaviour
 	void ButtonInstantiatePlusAnimationClick()
 	{
 
-		StartCoroutine(InstantationPlusAnimation());
+		StartCoroutine(InstantationPlusAnimation(_startPosition,_endPosition));
 		
 	}
 	void MusicSwitchClick()
@@ -161,7 +177,6 @@ public class SwitchScript : MonoBehaviour
 		}
 		SoundManager.Instance.ChangeMusic(_musicToPlay[_musicIndex]);
 	}
-
 	void SkyBoxSwitchClick()
 	{
 		_skyBoxIndex++;
@@ -171,35 +186,63 @@ public class SwitchScript : MonoBehaviour
 		}
 		RenderSettings.skybox = _skyBoxes[_skyBoxIndex];
 	}
-	IEnumerator InstantationPlusAnimation()
+	void ButtonSymboleModuleClick()
+	{
+		switch (_direction)
+		{
+			case WhereNewSymboleCome.fromLeft:
+				StartCoroutine(InstantationPlusAnimation(new Vector3(-_oldGO.transform.localScale.x,0,0),_oldGO.transform.localPosition));
+				break;
+			case WhereNewSymboleCome.fromRight:
+				StartCoroutine(InstantationPlusAnimation(new Vector3(_oldGO.transform.localScale.x,0,0), _oldGO.transform.localPosition));
+				break;
+			case WhereNewSymboleCome.fromTop:
+				StartCoroutine(InstantationPlusAnimation(new Vector3(0, _oldGO.transform.localScale.y,0), _oldGO.transform.localPosition));
+				break;
+			case WhereNewSymboleCome.fromBottom:
+				StartCoroutine(InstantationPlusAnimation(new Vector3(0, -_oldGO.transform.localScale.y,0), _oldGO.transform.localPosition));
+				break;
+			default:
+				break;
+		}
+		
+	}
+	IEnumerator InstantationPlusAnimation(Vector3 startPos,Vector3 endPos)
 	{
 		this.gameObject.GetComponent<BoxCollider>().enabled = false;
 		_invertedMovementButton.gameObject.GetComponent<BoxCollider>().enabled = false;
-		if (_instantiatedGO != null)
+		_instantiatedGO = Instantiate(_objectToActivate, startPos, Quaternion.identity, _referenceSpace.transform);
+		_choosedMat++;
+		if (_choosedMat==_possibleMat.Length)
 		{
-			_oldGO = _instantiatedGO;
+			_choosedMat = 0;
 		}
-
-		
-
-		_instantiatedGO = Instantiate(_objectToActivate, _startPosition, Quaternion.identity, _referenceSpace.transform);
+		_instantiatedGO.GetComponent<MeshRenderer>().material = _possibleMat[_choosedMat];
+		_instantiatedGO.GetComponent<TileSymboleScript>()._mychoosedMat = _choosedMat;
+		_instantiatedGO.GetComponent<TileSymboleScript>()._mychoosedMatString = _possibleMat[_choosedMat].ToString();
 		float time = 0;
 		float tRatio;
 		while (time<=_animationDuration)
 		{
 			tRatio = _movementAnimationCurve.Evaluate(time / _animationDuration);
-			_instantiatedGO.transform.localPosition = Vector3.Lerp(_startPosition, _endPosition, tRatio);
-			_oldGO.transform.localPosition = Vector3.Lerp(_endPosition, _endPosition-_startPosition, tRatio);
+			_instantiatedGO.transform.localPosition = Vector3.Lerp(startPos, endPos, tRatio);
+
+			_oldGO.transform.localPosition = Vector3.Lerp(endPos, endPos - startPos, tRatio);
 
 			time += Time.deltaTime;
 			yield return null;
 		}
 
 		Destroy(_oldGO);
-		_instantiatedGO.transform.localPosition = _endPosition;
+		_instantiatedGO.transform.localPosition = endPos;
 		_invertedMovementButton._instantiatedGO = _instantiatedGO;
 		_symboleEnigma.CheckIfSymboleMatching();
 		this.gameObject.GetComponent<BoxCollider>().enabled = true;
 		_invertedMovementButton.gameObject.GetComponent<BoxCollider>().enabled = true;
+		if (_instantiatedGO != null)
+		{
+			_invertedMovementButton._oldGO=_instantiatedGO;
+			_oldGO = _instantiatedGO;
+		}
 	}
 }

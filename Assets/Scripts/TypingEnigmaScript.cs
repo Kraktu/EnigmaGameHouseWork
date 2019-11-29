@@ -8,45 +8,79 @@ public class TypingEnigmaScript : MonoBehaviour
 	public string[] _letterToShow;
 	public string[] _letterToType;
 	int _letterIndex;
-	public GameObject _keyToInstantiate;
 	public GameObject _lightBulbToActivate;
+	public string _wordWrittenAtTheEnd;
+	bool _isWrittingPossible = true;
+	public int _minLetterToType=0;
+	int _typedLetter;
 
-	private void Start()
-	{
-		_letterIndex = 0;
-	}
-	void CheckText(string keyPressed)
-	{
 
-		if (keyPressed==_letterToType[_letterIndex])
+
+	private void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Return)&&_typedLetter>= _minLetterToType)
 		{
-			if (_letterIndex==0)
-			{
-				_userTextMesh.text = "";
-			}
-			_userTextMesh.text += _letterToShow[_letterIndex];
-			_letterIndex++;
-		}
-		if (_letterIndex==_letterToShow.Length)
-		{
-			GameObject go = Instantiate(_keyToInstantiate, transform.position, Quaternion.identity);
-			go.GetComponent<KeyScript>()._objectToSetActive = _lightBulbToActivate;
-			Destroy(this.gameObject);
+			_userTextMesh.text = _wordWrittenAtTheEnd;
+			_isWrittingPossible = false;
+			_lightBulbToActivate.GetComponent<LightBulbScript>().ActivateLightBulb();
 		}
 	}
 	void OnGUI()
 	{
-		Event e = Event.current;
-		if (e.isKey)
+		if (Input.anyKeyDown)
 		{
-			
-			if (_letterIndex<_letterToType.Length)
+			Event e = Event.current;
+			if (_isWrittingPossible && e.isKey)
 			{
-				string KeyPressedString = e.keyCode.ToString();
-				CheckText(KeyPressedString);
+				if (_letterIndex < _letterToType.Length)
+				{
+					string KeyPressedString = e.keyCode.ToString();
+					if (KeyPressedString != "None")
+					{
+						_typedLetter++;
+						_userTextMesh.text += KeyPressedString;
+					}
+				}
 			}
 		}
+		
 	}
+
+	//private void Start()
+	//{
+	//	_letterIndex = 0;
+	//}
+	//void CheckText(string keyPressed)
+	//{
+	//
+	//	if (keyPressed==_letterToType[_letterIndex])
+	//	{
+	//		if (_letterIndex==0)
+	//		{
+	//			_userTextMesh.text = "";
+	//		}
+	//		_userTextMesh.text += _letterToShow[_letterIndex];
+	//		_letterIndex++;
+	//	}
+	//	if (_letterIndex==_letterToShow.Length)
+	//	{
+	//		_lightBulbToActivate.GetComponent<LightBulbScript>().ActivateLightBulb();
+	//		Destroy(this.gameObject);
+	//	}
+	//}
+	//void OnGUI()
+	//{
+	//	Event e = Event.current;
+	//	if (e.isKey)
+	//	{
+	//		
+	//		if (_letterIndex<_letterToType.Length)
+	//		{
+	//			string KeyPressedString = e.keyCode.ToString();
+	//			CheckText(KeyPressedString);
+	//		}
+	//	}
+	//}
 
 
 }

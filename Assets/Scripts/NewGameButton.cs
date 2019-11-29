@@ -33,7 +33,7 @@ public class NewGameButton : MonoBehaviour
 
 		else if (!_isFirstUse )
 		{
-			SceneManager.LoadScene("EndOfTheGame");
+			SceneManager.LoadScene("MainGame");
 		}
 	}
 	public void ReactivateNewGameButton()
