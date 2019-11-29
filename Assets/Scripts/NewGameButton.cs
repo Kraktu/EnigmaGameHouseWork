@@ -58,6 +58,7 @@ public class NewGameButton : MonoBehaviour
 	}
 	public void InitializeAllGameObjects()
 	{
+
 		for (int i = 0; i < _gameObjectsToInitialize.Length; i++)
 		{
 			LambdaBall lambdaBall = _gameObjectsToInitialize[i].GetComponent<LambdaBall>();

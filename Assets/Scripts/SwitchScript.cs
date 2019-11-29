@@ -61,7 +61,7 @@ public class SwitchScript : MonoBehaviour
 	public string _SymboleRollSound,_switchSound;
 
 	int _choosedMat=0;
-	[HideInInspector]
+	//[HideInInspector]
 	public bool _isActive = false;
 	int _nbrOfTimeClicked=0,_musicIndex=0,_skyBoxIndex=0;
 	bool _isLightOn = false;

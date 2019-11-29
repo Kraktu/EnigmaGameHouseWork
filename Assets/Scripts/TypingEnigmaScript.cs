@@ -35,9 +35,13 @@ public class TypingEnigmaScript : MonoBehaviour
 				if (_letterIndex < _letterToType.Length)
 				{
 					string KeyPressedString = e.keyCode.ToString();
-					if (KeyPressedString != "None")
+					if (KeyPressedString != "None"&&KeyPressedString!="Return")
 					{
 						_typedLetter++;
+						if (_typedLetter==1)
+						{
+							_userTextMesh.text = "";
+						}
 						_userTextMesh.text += KeyPressedString;
 					}
 				}
