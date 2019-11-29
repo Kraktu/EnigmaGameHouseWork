@@ -26,7 +26,7 @@ public class QuitButtonScript : MonoBehaviour
 			SoundManager.Instance.PlaySoundEffect(_fireworkSound);
 			for (int i = 0; i < _numberOfCandyToSpaw; i++)
 			{
-				Instantiate(_candyToSpawn, transform.position + new Vector3(Random.Range(-_maxCandyInstantiationDistance.x, _maxCandyInstantiationDistance.x), Random.Range(-_maxCandyInstantiationDistance.y, _maxCandyInstantiationDistance.y), Random.Range(-_maxCandyInstantiationDistance.z, transform.position.z-3)), Quaternion.identity); ;
+				Instantiate(_candyToSpawn, transform.position + new Vector3(Random.Range(-_maxCandyInstantiationDistance.x, _maxCandyInstantiationDistance.x), Random.Range(-_maxCandyInstantiationDistance.y, _maxCandyInstantiationDistance.y), Random.Range(-_maxCandyInstantiationDistance.z, transform.position.z-0.5f)), Quaternion.identity); ;
 			}
 			if (_nbrOfCLicksCount==1)
 			{

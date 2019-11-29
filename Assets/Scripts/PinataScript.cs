@@ -18,6 +18,7 @@ public class PinataScript : MonoBehaviour
 	[HideInInspector]
 	public bool _isActive=false;
 	public string _pinataExplodeSound,_pinataHitSound,_pinataSwapSound;
+	public GameObject _pinatatoInvisible,_outlinetoInvisible;
 
 	private void OnMouseDown()
 	{
@@ -53,7 +54,8 @@ public class PinataScript : MonoBehaviour
 			if (_firstStep == false)
 			{
 				_isTimerNeeded = false;
-				gameObject.GetComponent<MeshRenderer>().enabled = false;
+				_pinatatoInvisible.SetActive(false);
+				_outlinetoInvisible.SetActive(false);
 			}
 		}
 		
@@ -65,7 +67,8 @@ public class PinataScript : MonoBehaviour
 			if (_firstStep == false)
 			{
 				_isTimerNeeded = true;
-				gameObject.GetComponent<MeshRenderer>().enabled = true;
+				_pinatatoInvisible.SetActive(true);
+				_outlinetoInvisible.SetActive(true);
 			}
 		}
 	}
@@ -87,7 +90,10 @@ public class PinataScript : MonoBehaviour
 		if (_isActive)
 		{
 			_firstStep = true;
-			this.gameObject.GetComponent<MeshRenderer>().material = _activeMaterial;
+			gameObject.transform.GetChild(0).Translate(0, 0, 1);
+			gameObject.transform.GetChild(1).Translate(0, 0, 1);
+			gameObject.transform.GetChild(0).Rotate(180, 0, 0);
+			gameObject.transform.GetChild(1).Rotate(180, 0, 0);
 
 		}
 	}

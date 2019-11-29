@@ -19,7 +19,7 @@ public class SoundEnigma : MonoBehaviour
 		for (int i = 0; i < _soundButtons.Length; i++)
 		{
 			_soundButtons[i].GetComponent<BoxCollider>().enabled = false;
-			_soundButtons[i].GetComponent<MeshRenderer>().material = _InactiveButtonsMat;
+			//_soundButtons[i].GetComponent<MeshRenderer>().material = _InactiveButtonsMat;
 		}
 	}
 	public void SoundButtonPressed()
@@ -43,7 +43,7 @@ public class SoundEnigma : MonoBehaviour
 			for (int i = 0; i < _soundButtons.Length; i++)
 			{
 				_soundButtons[i].GetComponent<BoxCollider>().enabled = true;
-				_soundButtons[i].GetComponent<MeshRenderer>().material = _activeButtonMat;
+				//_soundButtons[i].GetComponent<MeshRenderer>().material = _activeButtonMat;
 			}
 		}
 	}

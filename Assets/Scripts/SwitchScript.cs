@@ -215,7 +215,7 @@ public class SwitchScript : MonoBehaviour
 	{
 		this.gameObject.GetComponent<BoxCollider>().enabled = false;
 		_invertedMovementButton.gameObject.GetComponent<BoxCollider>().enabled = false;
-		_instantiatedGO = Instantiate(_objectToActivate, startPos, Quaternion.identity, _referenceSpace.transform);
+		_instantiatedGO = Instantiate(_objectToActivate, startPos, _symboleEnigma.gameObject.transform.rotation, _referenceSpace.transform);
 		_choosedMat++;
 		if (_choosedMat==_possibleMat.Length)
 		{

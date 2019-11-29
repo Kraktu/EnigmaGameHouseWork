@@ -9,6 +9,7 @@ public class LightBulbScript : MonoBehaviour
 	public Material _activatedMat, _deActivatedMat;
 	public NewGameButton _newGameButton;
 	public string _enigmaClearSound, _lightBulbLight;
+	public GameObject _TargetLight;
 
 	public void ActivateLightBulb()
 	{
@@ -18,7 +19,7 @@ public class LightBulbScript : MonoBehaviour
 	public void DeActivateLightBulb()
 	{
 		_isLightBulbOn = false;
-		this.gameObject.GetComponent<MeshRenderer>().material = _deActivatedMat;
+		_TargetLight.GetComponent<MeshRenderer>().material = _deActivatedMat;
 	}
 
 	IEnumerator ActivateLightBulbCoroutine()
@@ -26,7 +27,7 @@ public class LightBulbScript : MonoBehaviour
 		yield return new WaitForSeconds(1);
 		SoundManager.Instance.PlaySoundEffect(_enigmaClearSound);
 		yield return new WaitForSeconds(2);
-		this.gameObject.GetComponent<MeshRenderer>().material = _activatedMat;
+		_TargetLight.GetComponent<MeshRenderer>().material = _activatedMat;
 		SoundManager.Instance.PlaySoundEffect(_lightBulbLight);
 		_newGameButton.ReactivateNewGameButton();
 	}
