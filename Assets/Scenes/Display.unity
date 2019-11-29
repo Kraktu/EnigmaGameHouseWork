@@ -654,6 +654,7 @@ MonoBehaviour:
   _skyBoxes: []
   _direction: 0
   _possibleMat: []
+  _musicMat: {fileID: 2100000, guid: e43c6f38861619940a5f66384f0b83a2, type: 2}
   _SymboleRollSound: 
   _switchSound: 
   _isActive: 0
@@ -1351,6 +1352,7 @@ MonoBehaviour:
   _skyBoxes: []
   _direction: 0
   _possibleMat: []
+  _musicMat: {fileID: 0}
   _SymboleRollSound: 
   _switchSound: 
   _isActive: 0
@@ -1612,6 +1614,7 @@ MonoBehaviour:
   _skyBoxes: []
   _direction: 0
   _possibleMat: []
+  _musicMat: {fileID: 2100000, guid: e43c6f38861619940a5f66384f0b83a2, type: 2}
   _SymboleRollSound: 
   _switchSound: 
   _isActive: 0
@@ -3448,6 +3451,7 @@ MonoBehaviour:
   _skyBoxes: []
   _direction: 0
   _possibleMat: []
+  _musicMat: {fileID: 2100000, guid: e43c6f38861619940a5f66384f0b83a2, type: 2}
   _SymboleRollSound: 
   _switchSound: 
   _isActive: 0
@@ -3941,6 +3945,7 @@ MonoBehaviour:
   _skyBoxes: []
   _direction: 0
   _possibleMat: []
+  _musicMat: {fileID: 2100000, guid: e43c6f38861619940a5f66384f0b83a2, type: 2}
   _SymboleRollSound: 
   _switchSound: 
   _isActive: 0
@@ -4186,6 +4191,7 @@ MonoBehaviour:
   _skyBoxes: []
   _direction: 0
   _possibleMat: []
+  _musicMat: {fileID: 0}
   _SymboleRollSound: 
   _switchSound: 
   _isActive: 0
@@ -5408,6 +5414,7 @@ MonoBehaviour:
   _activeButtonMat: {fileID: 2100000, guid: c98e7df238e0d2649adf336436940b6c, type: 2}
   _isActive: 0
   _soundEnigmaWrongSound: SoundEnigmaWrong
+  _baseMusicMat: {fileID: 2100000, guid: e1ad7896d45a4c845b120b1e100fde48, type: 2}
 --- !u!114 &1948474748
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5444,6 +5451,7 @@ MonoBehaviour:
   _skyBoxes: []
   _direction: 0
   _possibleMat: []
+  _musicMat: {fileID: 0}
   _SymboleRollSound: 
   _switchSound: 
   _isActive: 0
@@ -5490,6 +5498,7 @@ MonoBehaviour:
   _skyBoxes: []
   _direction: 0
   _possibleMat: []
+  _musicMat: {fileID: 2100000, guid: e43c6f38861619940a5f66384f0b83a2, type: 2}
   _SymboleRollSound: 
   _switchSound: 
   _isActive: 0

@@ -13,6 +13,7 @@ public class SoundEnigma : MonoBehaviour
 	[HideInInspector]
 	public bool _isActive;
 	public string _soundEnigmaWrongSound;
+	public Material _baseMusicMat;
 
 	private void Start()
 	{
@@ -29,6 +30,10 @@ public class SoundEnigma : MonoBehaviour
 		if (_nbrOfButtonPressed == _soundButtons.Length)
 		{
 			StartCoroutine(SoundButtonPressedCoroutine());
+			for (int i = 0; i < _soundButtons.Length; i++)
+			{
+				_soundButtons[i].transform.GetChild(0).GetComponent<MeshRenderer>().material = _baseMusicMat;
+			}
 		}
 		if (_nbrOfButtonPressed==_soundButtons.Length*_nbrOfSequencesNeededToWin)
 		{

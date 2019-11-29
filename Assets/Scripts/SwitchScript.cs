@@ -58,6 +58,7 @@ public class SwitchScript : MonoBehaviour
 	[Tooltip("ButtonSymboleModule")]
 	public Material[] _possibleMat;
 
+	public Material _musicMat;
 	public string _SymboleRollSound,_switchSound;
 
 	int _choosedMat=0;
@@ -162,6 +163,7 @@ public class SwitchScript : MonoBehaviour
 			_nbrOfTimeClicked++;
 			if (_nbrOfTimeClicked <= _soundEnigma._nbrOfSequencesNeededToWin)
 			{
+				gameObject.transform.GetChild(0).GetComponent<MeshRenderer>().material = _musicMat;
 				_soundEnigma.SoundButtonPressed();
 			}
 		}
