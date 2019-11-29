@@ -59,6 +59,7 @@ public class SwitchScript : MonoBehaviour
 	public Material[] _possibleMat;
 
 	public Material _musicMat;
+    public GameObject _roofToChange;
 	public string _SymboleRollSound,_switchSound;
 
 	int _choosedMat=0;
@@ -182,7 +183,13 @@ public class SwitchScript : MonoBehaviour
 			_musicIndex = 0;
 		}
 		SoundManager.Instance.ChangeMusic(_musicToPlay[_musicIndex]);
-	}
+        _skyBoxIndex++;
+        if (_skyBoxIndex == _skyBoxes.Length)
+        {
+            _skyBoxIndex = 0;
+        }
+        _roofToChange.GetComponent<MeshRenderer>().material = _skyBoxes[_skyBoxIndex];
+    }
 	void SkyBoxSwitchClick()
 	{
 		_skyBoxIndex++;
@@ -218,11 +225,13 @@ public class SwitchScript : MonoBehaviour
 		this.gameObject.GetComponent<BoxCollider>().enabled = false;
 		_invertedMovementButton.gameObject.GetComponent<BoxCollider>().enabled = false;
 		_instantiatedGO = Instantiate(_objectToActivate, startPos, _symboleEnigma.gameObject.transform.rotation, _referenceSpace.transform);
-		_choosedMat++;
-		if (_choosedMat==_possibleMat.Length)
-		{
-			_choosedMat = 0;
-		}
+        //_choosedMat++;
+        //if (_choosedMat==_possibleMat.Length)
+        //{
+        //	_choosedMat = 0;
+        //}
+
+        _choosedMat = Random.Range(0, _possibleMat.Length);
 		_instantiatedGO.GetComponent<MeshRenderer>().material = _possibleMat[_choosedMat];
 		_instantiatedGO.GetComponent<TileSymboleScript>()._mychoosedMat = _choosedMat;
 		_instantiatedGO.GetComponent<TileSymboleScript>()._mychoosedMatString = _possibleMat[_choosedMat].ToString();

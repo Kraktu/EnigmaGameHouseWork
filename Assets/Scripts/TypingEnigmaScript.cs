@@ -13,6 +13,7 @@ public class TypingEnigmaScript : MonoBehaviour
 	bool _isWrittingPossible = true;
 	public int _minLetterToType=0;
 	int _typedLetter;
+    public GameObject writtenName;
 
 
 
@@ -23,8 +24,15 @@ public class TypingEnigmaScript : MonoBehaviour
 			_userTextMesh.text = _wordWrittenAtTheEnd;
 			_isWrittingPossible = false;
 			_lightBulbToActivate.GetComponent<LightBulbScript>().ActivateLightBulb();
+            writtenName.SetActive(true);
+            Invoke("DeactivatePanel", 2);
 		}
 	}
+
+    void DeactivatePanel()
+    {
+        gameObject.SetActive(false);
+    }
 	void OnGUI()
 	{
 		if (Input.anyKeyDown)

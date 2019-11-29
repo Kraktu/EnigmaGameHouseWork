@@ -51,7 +51,7 @@ public class NewGameButton : MonoBehaviour
 		}
 		if (_isAllLightBulbActivated==true)
 		{
-            _NewGameText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
+            _NewGameText.GetComponent<TextMeshPro>().color = new Color32(255, 255, 255, 255);
 			this.gameObject.GetComponent<BoxCollider>().enabled = true;
 		}
 	}

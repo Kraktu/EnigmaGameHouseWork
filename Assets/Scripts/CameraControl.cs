@@ -56,7 +56,7 @@ public class CameraControl : MonoBehaviour
 
 			if (this._camera.localPosition.z != this._cameraDistance * -1)
 			{
-				this._camera.localPosition = new Vector3(0, 0, Mathf.Lerp(this._camera.localPosition.z, this._cameraDistance * -1, Time.deltaTime * _scrollDampening));
+				this._camera.localPosition = new Vector3(0, 2, Mathf.Lerp(this._camera.localPosition.z, this._cameraDistance * -1, Time.deltaTime * _scrollDampening));
 			}
 
 			yield return null;
