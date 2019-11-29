@@ -7,7 +7,7 @@ public class CameraControl : MonoBehaviour
 	Transform _camera;
 	Transform _rotationCenter;
 	Vector3 _localRotation;
-	float _cameraDistance = 10;
+	float _cameraDistance = 5;
 	public float _mouseSensitivity=4;
 	public float _scrollSensitivity=2;
 	public float _orbitDampening=10;
