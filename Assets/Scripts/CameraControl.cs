@@ -7,7 +7,7 @@ public class CameraControl : MonoBehaviour
 	Transform _camera;
 	Transform _rotationCenter;
 	Vector3 _localRotation;
-	float _cameraDistance = 10;
+	float _cameraDistance;
 	public float _mouseSensitivity=4;
 	public float _scrollSensitivity=2;
 	public float _orbitDampening=10;
@@ -19,6 +19,7 @@ public class CameraControl : MonoBehaviour
 
 	private void Start()
 	{
+		_cameraDistance = -this.transform.position.z;
 		this._camera = this.transform;
 		this._rotationCenter = this.transform.parent;
 		StartCoroutine(CameraControlRotation());
