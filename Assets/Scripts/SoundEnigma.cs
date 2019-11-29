@@ -12,6 +12,7 @@ public class SoundEnigma : MonoBehaviour
 	public Material _InactiveButtonsMat, _activeButtonMat;
 	[HideInInspector]
 	public bool _isActive;
+	public string _soundEnigmaWrongSound;
 
 	private void Start()
 	{
@@ -24,6 +25,11 @@ public class SoundEnigma : MonoBehaviour
 	public void SoundButtonPressed()
 	{
 		_nbrOfButtonPressed++;
+
+		if (_nbrOfButtonPressed == _soundButtons.Length)
+		{
+			StartCoroutine(SoundButtonPressedCoroutine());
+		}
 		if (_nbrOfButtonPressed==_soundButtons.Length*_nbrOfSequencesNeededToWin)
 		{
 			_lightBulbToActivate.GetComponent<LightBulbScript>().ActivateLightBulb();
@@ -40,5 +46,10 @@ public class SoundEnigma : MonoBehaviour
 				_soundButtons[i].GetComponent<MeshRenderer>().material = _activeButtonMat;
 			}
 		}
+	}
+	IEnumerator SoundButtonPressedCoroutine()
+	{
+		yield return new WaitForSeconds(1);
+		SoundManager.Instance.PlaySoundEffect(_soundEnigmaWrongSound);
 	}
 }

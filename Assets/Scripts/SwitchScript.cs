@@ -32,7 +32,7 @@ public class SwitchScript : MonoBehaviour
 	[Tooltip("SwitchActivator")]
 	public bool _isObjectDisablable = false;
 	[Tooltip("ButtonPlaySound")]
-	public string _soundEffectToPlay;
+	public string _soundEffectToPlayOnButtonPlaySoundClick;
 	[Tooltip("ButtonPlaySound")]
 	public SoundEnigma _soundEnigma;
 	[Tooltip("ButtonInstantiatePlusAnimation")]
@@ -58,8 +58,10 @@ public class SwitchScript : MonoBehaviour
 	[Tooltip("ButtonSymboleModule")]
 	public Material[] _possibleMat;
 
+	public string _SymboleRollSound,_switchSound;
+
 	int _choosedMat=0;
-	[HideInInspector]
+	//[HideInInspector]
 	public bool _isActive = false;
 	int _nbrOfTimeClicked=0,_musicIndex=0,_skyBoxIndex=0;
 	bool _isLightOn = false;
@@ -134,6 +136,7 @@ public class SwitchScript : MonoBehaviour
 			if (_isObjectDisablable)
 			{
 				_objectToActivate.SetActive(false);
+				SoundManager.Instance.PlaySoundEffect(_switchSound);
 			}
 
 		}
@@ -143,6 +146,7 @@ public class SwitchScript : MonoBehaviour
 			if (_objectToActivate != null)
 			{
 				_objectToActivate.SetActive(true);
+				SoundManager.Instance.PlaySoundEffect(_switchSound);
 			}
 		}
 	}
@@ -152,7 +156,7 @@ public class SwitchScript : MonoBehaviour
 	}
 	void ButtonPlaySoundClick()
 	{
-		SoundManager.Instance.PlaySoundEffect(_soundEffectToPlay);
+		SoundManager.Instance.PlaySoundEffect(_soundEffectToPlayOnButtonPlaySoundClick);
 		if (_soundEnigma != null)
 		{
 			_nbrOfTimeClicked++;
@@ -222,6 +226,7 @@ public class SwitchScript : MonoBehaviour
 		_instantiatedGO.GetComponent<TileSymboleScript>()._mychoosedMatString = _possibleMat[_choosedMat].ToString();
 		float time = 0;
 		float tRatio;
+		SoundManager.Instance.PlaySoundEffect(_SymboleRollSound);
 		while (time<=_animationDuration)
 		{
 			tRatio = _movementAnimationCurve.Evaluate(time / _animationDuration);
