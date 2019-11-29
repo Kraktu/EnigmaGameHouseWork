@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class NewGameButton : MonoBehaviour
 {
 	bool _isFirstUse = true;
 	bool _isAllLightBulbActivated;
 	public LightBulbScript[] _lightBulbs;
-	public TextMesh _NewGameText;
+	public TextMeshPro _NewGameText;
 	public Material _deactivatedMat, _activatedMat;
 	public GameObject[] _gameObjectsToInitialize;
 	public QuitButtonScript _quitButton;
@@ -23,8 +24,7 @@ public class NewGameButton : MonoBehaviour
 			{
 				_lightBulbs[i].DeActivateLightBulb();
 			}
-			_NewGameText.gameObject.SetActive(false);
-			this.gameObject.GetComponent<MeshRenderer>().material = _deactivatedMat;
+            _NewGameText.GetComponent<TextMeshPro>().color = new Color32(108, 108, 108, 92);
 			this.gameObject.GetComponent<BoxCollider>().enabled = false;
 			_isFirstUse = false;
 			InitializeAllGameObjects();
@@ -51,8 +51,7 @@ public class NewGameButton : MonoBehaviour
 		}
 		if (_isAllLightBulbActivated==true)
 		{
-			_NewGameText.gameObject.SetActive(true);
-			this.gameObject.GetComponent<MeshRenderer>().material = _activatedMat;
+            _NewGameText.GetComponent<TextMeshProUGUI>().color = new Color32(255, 255, 255, 255);
 			this.gameObject.GetComponent<BoxCollider>().enabled = true;
 		}
 	}
