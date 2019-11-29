@@ -12,11 +12,13 @@ public class NewGameButton : MonoBehaviour
 	public Material _deactivatedMat, _activatedMat;
 	public GameObject[] _gameObjectsToInitialize;
 	public QuitButtonScript _quitButton;
+	public string _firstTimeNewGamePressedSound;
 
 	private void OnMouseDown()
 	{
 		if (_isFirstUse)
 		{
+			SoundManager.Instance.PlaySoundEffect(_firstTimeNewGamePressedSound);
 			for (int i = 0; i < _lightBulbs.Length; i++)
 			{
 				_lightBulbs[i].DeActivateLightBulb();

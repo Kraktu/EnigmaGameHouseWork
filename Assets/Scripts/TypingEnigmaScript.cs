@@ -7,7 +7,7 @@ public class TypingEnigmaScript : MonoBehaviour
 	public TextMesh _userTextMesh;
 	public string[] _letterToShow;
 	public string[] _letterToType;
-	int _letterIndex;
+	int _letterIndex=0;
 	public GameObject _lightBulbToActivate;
 	public string _wordWrittenAtTheEnd;
 	bool _isWrittingPossible = true;

@@ -12,6 +12,7 @@ public class QuitButtonScript : MonoBehaviour
 	public int _numberOfCandyToSpaw;
 	public GameObject _candyToSpawn;
 	public Vector3 _maxCandyInstantiationDistance;
+	public string _fireworkSound;
 	private void OnMouseDown()
 	{
 		if (_isQuitWorking)
@@ -22,6 +23,7 @@ public class QuitButtonScript : MonoBehaviour
 		else if (!_isQuitWorking)
 		{
 			_nbrOfCLicksCount++;
+			SoundManager.Instance.PlaySoundEffect(_fireworkSound);
 			for (int i = 0; i < _numberOfCandyToSpaw; i++)
 			{
 				Instantiate(_candyToSpawn, transform.position + new Vector3(Random.Range(-_maxCandyInstantiationDistance.x, _maxCandyInstantiationDistance.x), Random.Range(-_maxCandyInstantiationDistance.y, _maxCandyInstantiationDistance.y), Random.Range(-_maxCandyInstantiationDistance.z, transform.position.z-3)), Quaternion.identity); ;

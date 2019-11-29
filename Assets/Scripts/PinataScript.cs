@@ -17,6 +17,7 @@ public class PinataScript : MonoBehaviour
 	public int _numberOfCandyToSpaw;
 	[HideInInspector]
 	public bool _isActive=false;
+	public string _pinataExplodeSound,_pinataHitSound,_pinataSwapSound;
 
 	private void OnMouseDown()
 	{
@@ -29,10 +30,12 @@ public class PinataScript : MonoBehaviour
 					StartCoroutine(TimerBeforeReset());
 				}
 				_numberOfClicks++;
+				SoundManager.Instance.PlaySoundEffect(_pinataHitSound);
 			}
 
 			if (!_secondStep && _firstStep && _numberOfClicks == _numberOfClicksNeeded)
 			{
+				SoundManager.Instance.PlaySoundEffect(_pinataSwapSound);
 				_secondStep = true;
 				_isTimerNeeded = false;
 				Vector3 originalPosition = transform.position;
@@ -92,6 +95,7 @@ public class PinataScript : MonoBehaviour
 	{
 		if (_isActive)
 		{
+			SoundManager.Instance.PlaySoundEffect(_pinataExplodeSound);
 			for (int i = 0; i < _numberOfCandyToSpaw; i++)
 			{
 				Instantiate(_candyToSpawn, transform.position + new Vector3(Random.Range(-_maxCandyInstantiationDistance.x, _maxCandyInstantiationDistance.x), Random.Range(0, _maxCandyInstantiationDistance.y), Random.Range(-_maxCandyInstantiationDistance.z, _maxCandyInstantiationDistance.z)), Quaternion.identity);
