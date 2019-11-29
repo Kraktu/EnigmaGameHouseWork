@@ -180,6 +180,11 @@ MonoBehaviour:
   _referenceSpace: {fileID: 2960381135742089463}
   _invertedMovementButton: {fileID: 2960381135874591389}
   _symboleEnigma: {fileID: 0}
+  _musicToPlay: []
+  _skyBoxes: []
+  _direction: 0
+  _possibleMat: []
+  _isActive: 0
   _instantiatedGO: {fileID: 0}
 --- !u!1 &2960381134705969900
 GameObject:
@@ -757,7 +762,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2960381135742089463}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.57, y: -0.02, z: -6.56}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2960381135865737968}
@@ -1047,6 +1052,11 @@ MonoBehaviour:
   _referenceSpace: {fileID: 2960381135742089463}
   _invertedMovementButton: {fileID: 2960381134622829426}
   _symboleEnigma: {fileID: 0}
+  _musicToPlay: []
+  _skyBoxes: []
+  _direction: 0
+  _possibleMat: []
+  _isActive: 0
   _instantiatedGO: {fileID: 0}
 --- !u!1 &2960381135965408512
 GameObject:

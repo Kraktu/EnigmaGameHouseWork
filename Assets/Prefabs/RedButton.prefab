@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 232697643678499772}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0.409068, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 0.4, z: 0}
   m_LocalScale: {x: 83.41407, y: 83.41407, z: 83.41407}
   m_Children:
   - {fileID: 5506269270105841624}
   m_Father: {fileID: 7646253286869942894}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5792485631690053848
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7646253286869942894}
   m_Layer: 0
-  m_Name: m_BigButton
+  m_Name: RedButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -292,14 +292,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7410666293819280160}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalScale: {x: 101, y: 100, z: 100}
   m_Children:
   - {fileID: 3779153539597637401}
   m_Father: {fileID: 7646253286869942894}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &4762408169021868567
 MeshFilter:
   m_ObjectHideFlags: 0
